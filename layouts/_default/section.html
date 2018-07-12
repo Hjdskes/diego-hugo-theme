@@ -1,0 +1,15 @@
+{{ partial "head.html" . }}
+<div class="content">
+  {{ .Content }}
+  <h2>{{ humanize .Section }}</h2>
+  <div class="posts">
+    <ul>
+      {{ range .Data.Pages.GroupByDate "Jan, 2006" "desc"}}
+        {{ range sort .Pages "Date" "desc" }}
+          {{ partial "li.html" . }}
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ partial "footer.html" . }}

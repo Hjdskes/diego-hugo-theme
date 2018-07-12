@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <!-- TODO: fix-->
+  <meta name="author" content="{{ .Params.Author | default .Site.Author.givenname }}"/>
+  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .IsPage }}{{ .Description }}{{ end }}"/>
+  {{ .Hugo.Generator }}
+  <meta name="referrer" content="no-referrer"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .IsPage }}{{ .Description }}{{ end }}"/>
+  <meta property="og:locale" content="nn_NO"/>
+  <meta property="og:site_name" content="{{ .Site.Title }}"/>
+  <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="{{ .Permalink }}"/>
+  <meta property="og:image" content="{{ .Site.Params.logofile | absURL }}"/>
+
+  <title>
+    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+    {{ if eq $url "" }}
+      {{ .Site.Title }}
+    {{ else }}
+      {{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Site.Title }} - {{ .Title }} {{ end }}
+    {{ end }}
+  </title>
+
+  <link rel="canonical" href="{{ .Permalink }}"/>
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/syntax.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/zoom.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/fontawesome-all.min.css"/>
+  {{ if .RSSLink }}
+  <link rel="alternate" type="application/rss+xml" href="{{ .RSSLink }}" title="{{ .Site.Title }}"/>
+  {{ end }}
+  <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico"/>
+
+  <script src="/js/zoom-vanilla.js"></script>
+</head>
+
+<body>
+  <div class="banner">
+    <a href="{{ .Site.BaseURL }}"><img class="logo" src="{{ .Site.Params.logofile | absURL }}" alt="logo" /></a>
+    <div>
+      <a id="name" href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+      <nav>
+        <ul>
+	  <!-- TODO: use sections -->
+          {{ if ne (len (where .Site.RegularPages "Section" "blog")) 0 }}
+            <li><a href="/blog/">Blog</a></li>
+          {{ end }}
+          {{ range $.Site.Home.Sections }}
+            {{ range first 1 (where .Pages "Section" "ne" "")}}
+              {{ if ne .Section "blog"}}
+                <li><a href="{{ .Section | urlize | absURL }}">{{ .Section }}</a></li>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+          {{ range where .Site.RegularPages "Section" ""}}
+            {{ if and (ne .Title "License") (ne .Title "Home")}}
+              <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </div>

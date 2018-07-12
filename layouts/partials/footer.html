@@ -1,0 +1,45 @@
+<div id="postamble">
+  <footer>
+    <ul class="social-icons mb-md">
+      {{ if .Site.Params.email }}
+      <li>
+        <a href="mailto:{{ .Site.Params.email }}" title="Send a mail to {{ .Site.Params.email }}">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      {{ end }}
+
+      {{ if .Site.Params.github }}
+      <li>
+        <a href="https://github.com/{{ .Site.Params.github }}" title="{{ .Site.Params.github }} on GitHub">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      {{ end }}
+
+      {{ if .Site.RSSLink }}
+      <li>
+        <a href="{{ .Site.RSSLink }}" title="">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+
+    <div id="license-note">
+      <a href="{{ .Site.BaseURL }}license">{{ .Site.Params.copyright }}</a>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
