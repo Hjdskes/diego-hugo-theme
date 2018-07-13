@@ -283,10 +283,7 @@ h6 {
     font-size: 1.1em;
 }
 footer {
-    width: 100%;
-    font-size: 1.2em;
-    margin-bottom: 3em;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 footer ul {
     display: flex;
@@ -312,7 +309,7 @@ footer li {
 }
 #license-note {
     text-align: center;
-    font-size: 75%;
+    font-size: .9em;
     padding-top: 3em;
 }
 
