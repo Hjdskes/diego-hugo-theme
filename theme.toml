@@ -5,7 +5,6 @@ description = "A clean, fast and responsive theme"
 homepage = "https://github.com/Hjdskes/diego-hugo-theme"
 tags = ["clean", "fast", "small", "minimal", "responsive", "typography"]
 features = ["flexible", "fast", "minimal", "small"]
-# TODO: update once done
 min_version = 0.20.2
 
 [author]

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8"/>
-  <!-- TODO: fix-->
-  <meta name="author" content="{{ .Params.Author | default .Site.Author.givenname }}"/>
+  <meta name="author" content="{{ .Params.Author | default .Site.Author.name }}"/>
   <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .IsPage }}{{ .Description }}{{ end }}"/>
   {{ .Hugo.Generator }}
   <meta name="referrer" content="no-referrer"/>
