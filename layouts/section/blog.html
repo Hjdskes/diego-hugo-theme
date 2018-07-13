@@ -2,8 +2,8 @@
 <div class="content">
   {{ .Content }}
   <h2>{{ humanize .Section}}</h2>
-  <div class="posts">
-    <ul>
+  <div>
+    <ul class="posts">
       {{ range .Data.Pages.GroupByDate "Jan, 2006" "desc"}}
         <li class="groupby">{{ .Key }}</li>
         {{ range sort .Pages "Date" "desc" }}

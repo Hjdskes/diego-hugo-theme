@@ -1,8 +1,11 @@
 <li class="post-item">
-  <span class="meta">{{ .Date.Format .Site.Params.dateform }}</span>
-  {{ if .Params.link }}
-    <a href="{{ .Params.link }}"><span>{{ .Title }}</span></a>
-  {{ else }}
-    <a href="{{ .Permalink }}"><span>{{ .Title }}</span></a>
-  {{ end }}
+  <article>
+    <time class="meta" datetime="{{ time .Date }}">{{ .Date.Format .Site.Params.dateform }}</time>
+    <header>
+      {{ if .Params.link }}
+      <a href="{{ .Params.link }}">{{ .Title }}</a>
+      {{ else }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+    </header>
 </li>

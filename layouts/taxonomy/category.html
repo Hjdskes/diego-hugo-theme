@@ -1,9 +1,9 @@
 {{ partial "head.html" . }}
 <section>
   <div class="content">
-    <div class="posts">
+    <div>
       <h2>Posts in the {{ .Title }} category</h2>
-      <ul>
+      <ul class="posts">
         {{ range .Data.Pages.ByPublishDate }}
           {{ partial "li.html" . }}
         {{ end }}
