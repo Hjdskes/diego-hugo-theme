@@ -58,8 +58,7 @@ dfn {
     font-style: italic;
 }
 mark {
-    background: #3f9f9f;
-    color: #fffff8;
+    background: #1f9c1f;
 }
 code,
 kbd,
@@ -74,7 +73,7 @@ pre {
 }
 blockquote {
     font-style: italic;
-    color: #7a7a7a;
+    color: #67767e;
     text-align: center;
 }
 blockquote p {
@@ -137,66 +136,13 @@ svg:not(:root) {
 figure {
     margin: 0;
 }
-fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
-}
-legend {
-    border: 0;
-    padding: 0;
-}
-button,
-input,
-select,
-textarea {
-    font-family: inherit;
-    font-size: 100%;
-    margin: 0;
-}
-button,
-input {
-    line-height: normal;
-}
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer;
-}
-button[disabled],
-input[disabled] {
-    cursor: default;
-}
-input[type="checkbox"],
-input[type="radio"] {
-    box-sizing: border-box;
-    padding: 0;
-}
-input[type="search"] {
-    -webkit-appearance: textfield;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-}
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
-}
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-textarea {
-    overflow: auto;
-    vertical-align: top;
-}
 table {
     border-collapse: collapse;
     border-spacing: 0;
     margin: auto;
+}
+th {
+    color: #263238;
 }
 html {
     font-family: 'Nunito', sans-serif;
@@ -210,19 +156,11 @@ code {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     text-align: center;
-    color: #657b83;
     margin-bottom: 1em;
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
-}
-#name{
-    color: #657b83;
-    text-decoration: none;
-}
-#name:hover {
-    color: #3f9f9f;
 }
 .logo {
     max-width: 180px;
@@ -236,7 +174,7 @@ code {
 }
 .meta {
     font-size: 75%;
-    color: #666666;
+    color: #67767e;
     display: flex;
     padding-bottom: 1.4rem;
 }
@@ -277,20 +215,19 @@ code {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+    color: #213038;
     padding-top: 0.6em;
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
 }
 html {
-    background-color: #fffff8;
-    color: #2f2f2f;
+    color: #37474f;
     margin: 1em;
 }
 body {
@@ -307,22 +244,11 @@ code {
 }
 a {
     text-decoration: none;
-    color: #3f8f8f;
-}
-a:visited {
-    color: #2f6f6f;
+    color: #228b22;
 }
 a:hover {
     text-decoration: underline;
-    color: #3f9f9f;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #657b83;
+    color: #68c468;
 }
 .title {
     text-align: left;
@@ -330,10 +256,9 @@ h6 {
     font-size: 2.7em;
 }
 pre {
-    background-color: #fdf6e3;
-    color: #657b83;
-    border: 1pt solid #93a1a1;
     padding: 1em;
+    background-color: #fdf6e3;
+    border: 1pt solid #93a1a1;
     box-shadow: 2pt 2pt 4pt #93a1a1;
 }
 pre code {
@@ -357,10 +282,6 @@ h5 {
 h6 {
     font-size: 1.1em;
 }
-.footnotes {
-    font-size: 2.1em;
-    font-style: italic;
-}
 footer {
     width: 100%;
     font-size: 1.2em;
@@ -380,14 +301,16 @@ footer li {
     display: inline-block;
     margin: 0 5px;
 }
-footer a {
-    color: #657b83;
+.social-icons a {
+    color: #67767e;
 }
-footer a:hover {
-    color: #3f9f9f;
+.social-icons a:hover {
+    color: #81949e;
+}
+#name {
+    color: #213038;
 }
 #license-note {
-    color: #657b83;
     text-align: center;
     font-size: 75%;
     padding-top: 3em;
