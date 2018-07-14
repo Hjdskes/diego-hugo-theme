@@ -1,6 +1,11 @@
 <!-- TODO: break up in rows if length > 4.-->
 <div style="column-count: {{ len .Params }}; column-gap: 20px;">
   {{ range .Params }}
-  <img src="{{ . }}" style="width: 100%; height: auto;" data-action="zoom">
+  <img src="{{ . }}" style="width: 100%; height: auto; display: none" data-action="zoom">
+  <noscript>
+    <a href="{{ . }}">
+      <img src="{{ . }}" style="width: 100%; height: auto;">
+    </a>
+  </noscript>
   {{ end }}
 </div>
