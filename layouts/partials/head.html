@@ -16,12 +16,12 @@
   <meta property="og:image" content="{{ .Site.Params.logofile | absURL }}"/>
 
   <title>
-    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-    {{ if eq $url "" }}
+    {{- $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" -}}
+    {{- if eq $url "" -}}
       {{ .Site.Title }}
-    {{ else }}
+    {{- else -}}
       {{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Site.Title }} - {{ .Title }} {{ end }}
-    {{ end }}
+    {{- end -}}
   </title>
 
   <link rel="canonical" href="{{ .Permalink }}"/>

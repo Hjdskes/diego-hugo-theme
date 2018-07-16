@@ -5,7 +5,7 @@
 </div>
 
 <div class="meta">
-  {{ .Date.Format .Site.Params.dateform }}
+  {{- .Date.Format .Site.Params.dateform -}}
   <div class="middot">{{ .ReadingTime }} minute read</div>
   <div class="tags">
     <ul>
