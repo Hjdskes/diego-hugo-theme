@@ -52,24 +52,21 @@
     <div>
       <a id="name" href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
       <nav>
-        <ul>
-	  <!-- TODO: use sections -->
-          {{ if ne (len (where .Site.RegularPages "Section" "blog")) 0 }}
-            <li><a href="/blog/">Blog</a></li>
-          {{ end }}
-          {{ range $.Site.Home.Sections }}
-            {{ range first 1 (where .Pages "Section" "ne" "")}}
-              {{ if ne .Section "blog"}}
-                <li><a href="{{ .Section | urlize | absURL }}">{{ .Section }}</a></li>
-              {{ end }}
+        {{ if ne (len (where .Site.RegularPages "Section" "blog")) 0 }}
+        <a href="/blog/">Blog</a>
+        {{ end }}
+        {{ range $.Site.Home.Sections }}
+          {{ range first 1 (where .Pages "Section" "ne" "")}}
+            {{ if ne .Section "blog"}}
+              <a href="{{ .Section | urlize | absURL }}">{{ humanize .Section }}</a>
             {{ end }}
           {{ end }}
-          {{ range where .Site.RegularPages "Section" ""}}
-            {{ if and (ne .Title "License") (ne .Title "Home")}}
-              <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-            {{ end }}
+        {{ end }}
+        {{ range where .Site.RegularPages "Section" ""}}
+          {{ if and (ne .Title "License") (ne .Title "Home")}}
+            <a href="{{ .Permalink }}">{{ humanize .Title }}</a>
           {{ end }}
-        </ul>
+        {{ end }}
       </nav>
     </div>
   </div>
