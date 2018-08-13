@@ -25,24 +25,13 @@
   </title>
 
   <link rel="canonical" href="{{ .Permalink }}"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Quicksand|Roboto+Mono"/>
-  <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
-  <link rel="stylesheet" type="text/css" href="/css/syntax.css"/>
-  <link rel="stylesheet" type="text/css" href="/css/zoom.css"/>
   {{ if .RSSLink }}
   <link rel="alternate" type="application/rss+xml" href="{{ .RSSLink }}" title="{{ .Site.Title }}"/>
   {{ end }}
   <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico"/>
 
-  <script defer type="text/javascript" src="/js/zoom-vanilla.js"></script>
-  <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-	images = document.querySelectorAll("img[data-action=\"zoom\"]");
-	images.forEach(function(image) {
-	    image.style.display = "block";
-	})
-    }, false);
-  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Quicksand|Roboto+Mono"/>
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
 </head>
 
 <body>
