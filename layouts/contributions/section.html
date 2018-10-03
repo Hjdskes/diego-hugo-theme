@@ -1,0 +1,25 @@
+{{ partial "head.html" . }}
+<div class="content">
+  {{ .Content }}
+  <h2>Highlights</h2>
+  <div>
+    <ul class="posts">
+      {{ range (where .Data.Pages "Params.highlight" true).GroupByDate "Jan, 2006" "desc" }}
+        {{ range sort .Pages "Date" "desc" }}
+          {{ partial "li.html" . }}
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  <h2>Other contributions</h2>
+  <div>
+    <ul class="posts">
+      {{ range (where .Data.Pages "Params.highlight" false).GroupByDate "Jan, 2006" "desc" }}
+        {{ range sort .Pages "Date" "desc" }}
+          {{ partial "li.html" . }}
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ partial "footer.html" . }}

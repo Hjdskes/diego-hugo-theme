@@ -5,5 +5,6 @@ description = ""
 tags = []
 categories = []
 link = ""
+type = ""
 draft = true
 +++
