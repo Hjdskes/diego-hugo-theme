@@ -11,7 +11,7 @@
       {{ end }}
     </ul>
   </div>
-  <h2>Unmaintained projects</h2>
+  <h2>Archived projects</h2>
   <div>
     <ul class="posts">
       {{ range (where .Data.Pages "Params.type" "Unmaintained").GroupByDate "Jan, 2006" "desc" }}
