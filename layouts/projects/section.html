@@ -21,12 +21,12 @@
       {{ end }}
     </ul>
   </div>
-  <h2>University projects</h2>
+  <h2>Contributions to other projects</h2>
   <div>
     <ul class="posts">
-      {{ range (where .Data.Pages "Params.type" "University").GroupByDate "Jan, 2006" "desc" }}
+      {{ range (where .Data.Pages "Params.type" "Contribution").GroupByDate "Jan, 2006" "desc" }}
         {{ range sort .Pages "Date" "desc" }}
-          {{ partial "li.html" . }}
+          {{ partial "contribution.html" . }}
         {{ end }}
       {{ end }}
     </ul>

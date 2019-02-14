@@ -1,0 +1,13 @@
+<li>
+  <article>
+    <!-- TODO: really show date? It's not that important nor accurate... -->
+    <time class="list-meta" datetime="{{ time .Date }}">{{ .Date.Format "Jan, 2006" }}</time>
+    <header>
+      {{ if .Params.link }}
+        <a href="{{ .Params.link }}">{{ .Title }}</a>
+      {{ else }}
+        {{ .Title }}
+        {{ .Content }}
+      {{ end }}
+    </header>
+</li>

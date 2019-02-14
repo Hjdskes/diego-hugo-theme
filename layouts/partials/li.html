@@ -1,11 +1,7 @@
-<li class="post-item">
+<li>
   <article>
-    <time class="meta" datetime="{{ time .Date }}">{{ .Date.Format .Site.Params.dateform }}</time>
+    <time class="list-meta" datetime="{{ time .Date }}">{{ .Date.Format .Site.Params.dateform }}</time>
     <header>
-      {{ if .Params.link }}
-      <a href="{{ .Params.link }}">{{ .Title }}</a>
-      {{ else }}
       <a href="{{ .Permalink }}">{{ .Title }}</a>
-      {{ end }}
     </header>
 </li>
