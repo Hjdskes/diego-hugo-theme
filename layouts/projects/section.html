@@ -1,5 +1,6 @@
 {{ partial "head.html" . }}
 <div class="content">
+  <h1>{{ with .Title }}{{ humanize . }}{{ else }}{{ humanize .Section }}{{ end }}</h1>
   {{ .Content }}
   <h2>Active projects</h2>
   <div>
