@@ -46,20 +46,11 @@
     <div>
       <a id="name" href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
       <nav>
-        {{ if ne (len (where .Site.RegularPages "Section" "blog")) 0 }}
-        <a href="/blog/">Blog</a>
-        {{ end }}
         {{ range $.Site.Home.Sections }}
-          {{ range first 1 (where .Pages "Section" "ne" "")}}
-            {{ if ne .Section "blog"}}
-              <a href="{{ .Section | urlize | absURL }}">{{ humanize .Section }}</a>
-            {{ end }}
-          {{ end }}
+          <a href="{{ .Section | urlize | absURL }}">{{ humanize .Section }}</a>
         {{ end }}
-        {{ range where .Site.RegularPages "Section" ""}}
-          {{ if and (ne .Title "License") (ne .Title "Home")}}
-            <a href="{{ .Permalink }}">{{ humanize .Title }}</a>
-          {{ end }}
+        {{ range where (where .Site.RegularPages "Section" "") ".Title" "!=" "License" }}
+          <a href="{{ .Permalink }}">{{ humanize .Title }}</a>
         {{ end }}
       </nav>
     </div>
