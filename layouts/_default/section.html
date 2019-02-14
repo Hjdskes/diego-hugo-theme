@@ -5,6 +5,7 @@
   <div>
     <ul class="posts">
       {{ range .Data.Pages.GroupByDate "Jan, 2006" "desc"}}
+        <li class="groupby">{{ .Key }}</li>
         {{ range sort .Pages "Date" "desc" }}
           {{ partial "li.html" . }}
         {{ end }}
