@@ -1,40 +1,38 @@
 {{ partial "head.html" . }}
-<div class="content">
-  {{ .Content }}
+{{ .Content }}
 
-  {{ $blogPosts := where .Data.Pages "Section" "blog" }}
-  {{ $nbPosts := len $blogPosts }}
-  {{ if and (isset .Site.Params "latestpostcount") (gt $nbPosts 0) }}
-  <div>
-    <h1>Latest posts</h1>
-    <ul class="posts">
-      {{ range (first .Site.Params.latestpostcount $blogPosts).GroupByDate "Jan, 2006" "desc" }}
-        <li class="groupby">{{ .Key }}</li>
-        {{ range sort .Pages "Date" "desc" }}
-          {{ partial "li.html" . }}
-        {{ end }}
+{{ $blogPosts := where .Data.Pages "Section" "blog" }}
+{{ $nbPosts := len $blogPosts }}
+{{ if and (isset .Site.Params "latestpostcount") (gt $nbPosts 0) }}
+<div>
+  <h1>Latest posts</h1>
+  <ul class="posts">
+    {{ range (first .Site.Params.latestpostcount $blogPosts).GroupByDate "Jan, 2006" "desc" }}
+      <li class="groupby">{{ .Key }}</li>
+      {{ range sort .Pages "Date" "desc" }}
+        {{ partial "li.html" . }}
       {{ end }}
-    </ul>
-
-    {{ if gt $nbPosts .Site.Params.latestpostcount }}
-      <a href="/blog/" class="see-more">See more …</a>
     {{ end }}
-  </div>
-  {{ end }}
+  </ul>
 
-  {{ $bestPosts := where $blogPosts "Params.best" true }}
-  {{ if gt (len $bestPosts) 0 }}
-  <div class="best-posts">
-    <h1>Best posts</h1>
-    <ul class="posts">
-      {{ range $bestPosts.GroupByDate "Jan, 2006" "desc" }}
-        <li class="groupby">{{ .Key }}</li>
-        {{ range sort .Pages "Date" "desc" }}
-          {{ partial "li.html" . }}
-        {{ end }}
-      {{ end }}
-    </ul>
-  </div>
+  {{ if gt $nbPosts .Site.Params.latestpostcount }}
+    <a href="/blog/" class="see-more">See more …</a>
   {{ end }}
 </div>
+{{ end }}
+
+{{ $bestPosts := where $blogPosts "Params.best" true }}
+{{ if gt (len $bestPosts) 0 }}
+<div class="best-posts">
+  <h1>Best posts</h1>
+  <ul class="posts">
+    {{ range $bestPosts.GroupByDate "Jan, 2006" "desc" }}
+      <li class="groupby">{{ .Key }}</li>
+      {{ range sort .Pages "Date" "desc" }}
+        {{ partial "li.html" . }}
+      {{ end }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
 {{ partial "footer.html" . }}

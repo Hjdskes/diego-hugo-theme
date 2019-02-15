@@ -1,16 +1,14 @@
 {{ partial "head.html" . }}
-<div class="content">
-  <h1>{{ with .Title }}{{ humanize . }}{{ else }}{{ humanize .Section }}{{ end }}</h1>
-  {{ .Content }}
-  <div>
-    <ul class="posts">
-      {{ range .Data.Pages.GroupByDate "Jan, 2006" "desc"}}
-        <li class="groupby">{{ .Key }}</li>
-        {{ range sort .Pages "Date" "desc" }}
-          {{ partial "li.html" . }}
-        {{ end }}
+<h1>{{ with .Title }}{{ humanize . }}{{ else }}{{ humanize .Section }}{{ end }}</h1>
+{{ .Content }}
+<div>
+  <ul class="posts">
+    {{ range .Data.Pages.GroupByDate "Jan, 2006" "desc"}}
+      <li class="groupby">{{ .Key }}</li>
+      {{ range sort .Pages "Date" "desc" }}
+        {{ partial "li.html" . }}
       {{ end }}
-    </ul>
-  </div>
+    {{ end }}
+  </ul>
 </div>
 {{ partial "footer.html" . }}
