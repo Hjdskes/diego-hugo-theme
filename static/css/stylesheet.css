@@ -344,23 +344,19 @@ button {
 
 @media screen and (max-width: 765px) {
     p {
-	text-align: justify;
+        text-align: justify;
     }
     .banner {
-	display: block;
+        display: block;
     }
     .logo {
-	padding-right: 0;
+        padding-right: 0;
     }
     nav {
-	display: block;
-	margin-top: 1em;
+        display: block;
+        margin-top: 1em;
     }
     #name {
-	display: none;
-    }
-    .page-heading h1 {
-	margin-top: 0;
-	padding-top: 0;
+        display: none;
     }
 }
