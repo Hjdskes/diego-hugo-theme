@@ -150,7 +150,7 @@ figure {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-    margin: auto;
+    width: 100%;
 }
 th {
     color: #263238;
