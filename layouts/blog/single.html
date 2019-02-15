@@ -1,21 +1,59 @@
 {{ partial "head.html" . }}
 
-<div class="page-heading">
-  <h1>{{ .Title }}</h1>
-</div>
+<h1>{{ .Title }}</h1>
 
-<div class="meta">
-  {{- .Date.Format .Site.Params.dateform -}}
-  <div class="middot">{{ .ReadingTime }} minute read</div>
-  <div class="tags">
-    <ul>
-      {{ range .Params.tags }}
-        <li class="middot"><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-      {{ end }}
-    </ul>
-  </div>
+<div class="post-meta">
+  {{ $posted := .Date.Format .Site.Params.dateform }}
+  {{ $lastmod := .Lastmod.Format .Site.Params.dateform }}
+  Posted: <time datetime="{{ $posted }}">{{ $posted }}</time>
+  &nbsp;• {{ .ReadingTime }} minute read
+  {{- if not (eq $lastmod $posted) -}}
+    &nbsp;• Last modified:
+    <time datetime="{{ $lastmod }}">{{ $lastmod }}</time>
+  {{- end -}}
 </div>
 
 {{ .Content }}
+
+{{ with .Params.categories }}
+  <div>
+    <div class="align">
+      <!-- Icon taken from the Minimo theme -->
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+        <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"></path>
+      </svg>
+    </div>
+    <ul class="list">
+      {{ range $index, $category := . }}
+        <li>
+          {{ with $.Site.GetPage (printf "/categories/%s" (urlize $category)) }}
+            <a href="{{ .Permalink }}">{{ $category }}</a>
+          {{- end -}}
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
+
+{{ with .Params.tags }}
+  <div>
+    <div class="align">
+      <!-- Icon taken from the Minimo theme -->
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+        <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"></path>
+        <line x1="7" y1="7" x2="7" y2="7"></line>
+      </svg>
+    </div>
+    <ul class="list">
+      {{ range $index, $tag := . }}
+        <li>
+          {{ with $.Site.GetPage (printf "/tags/%s" (urlize $tag)) }}
+            <a href="{{ .Permalink }}">{{ $tag }}</a>
+          {{- end -}}
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
 
 {{ partial "footer.html" . }}

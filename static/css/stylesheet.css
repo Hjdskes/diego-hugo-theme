@@ -142,6 +142,12 @@ ul ul {
 svg:not(:root) {
     overflow: hidden;
 }
+svg {
+    stroke: #67767e;
+    height: 1em;
+    width: 1em;
+    fill: none;
+}
 figure {
     margin: 0;
 }
@@ -188,12 +194,6 @@ footer nav {
     justify-content: center;
     height: 2em;
     margin: 0;
-}
-footer svg {
-  stroke: #67767e;
-  height: 1em;
-  width: 1em;
-  fill: none;
 }
 kbd {
     background-color:#f7f7f7;
@@ -245,6 +245,10 @@ button {
     max-width: 180px;
     padding-right: 1.5em;
 }
+.align {
+    display: inline-block;
+    vertical-align: middle;
+}
 .groupby {
     margin-top: 1em;
     margin-bottom: .2em;
@@ -268,17 +272,18 @@ button {
     flex-shrink: 0;
     padding-bottom: 0;
 }
-.middot:before {
-    font-size: 75%;
-    margin: 0 .8em;
-    content: "•";
-}
-.tags ul {
-    font-size: 1em;
+.list {
+    display: inline;
     list-style: none;
-    margin-top: 0;
-    margin-bottom: 0;
-    display: flex;
+}
+.list li {
+    display: inline;
+}
+.list li:after {
+    content: ", ";
+}
+.list li:last-child:after {
+    content: "";
 }
 #name {
     color: #213038;
