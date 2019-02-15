@@ -18,10 +18,10 @@
   </head>
   <body>
     <img src={{ .Site.Params.logofile | absURL }} class="logo" alt="logo"/>
-    <h2>404</h2>
+    <h1>404</h1>
     <p>
       The page you were looking for does not exist.</br>
-      <a href="/">Visit the home page</a>
+      <a href="{{ .Site.BaseURL }}">Visit the home page</a>
     </p>
   </body>
 </html>
