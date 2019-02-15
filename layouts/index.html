@@ -6,7 +6,7 @@
   {{ $nbPosts := len $blogPosts }}
   {{ if and (isset .Site.Params "latestpostcount") (gt $nbPosts 0) }}
   <div>
-    <h2>Latest posts</h2>
+    <h1>Latest posts</h1>
     <ul class="posts">
       {{ range (first .Site.Params.latestpostcount $blogPosts).GroupByDate "Jan, 2006" "desc" }}
         <li class="groupby">{{ .Key }}</li>
@@ -25,7 +25,7 @@
   {{ $bestPosts := where $blogPosts "Params.best" true }}
   {{ if gt (len $bestPosts) 0 }}
   <div class="best-posts">
-    <h2>Best posts</h2>
+    <h1>Best posts</h1>
     <ul class="posts">
       {{ range $bestPosts.GroupByDate "Jan, 2006" "desc" }}
         <li class="groupby">{{ .Key }}</li>
