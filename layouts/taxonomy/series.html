@@ -1,7 +1,7 @@
 {{ partial "head.html" . }}
 <section>
   <div>
-    <h2>Posts from the {{ .Title }} series</h2>
+    <h1>Posts from the {{ .Title }} series</h1>
     <ul class="posts">
       {{ range .Data.Pages.ByPublishDate }}
         {{ partial "li.html" . }}
