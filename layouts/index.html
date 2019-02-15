@@ -16,14 +16,14 @@
   </ul>
 
   {{ if gt $nbPosts .Site.Params.latestpostcount }}
-    <a href="/blog/" class="see-more">See more …</a>
+    <a href="/blog/">See more …</a>
   {{ end }}
 </div>
 {{ end }}
 
 {{ $bestPosts := where $blogPosts "Params.best" true }}
 {{ if gt (len $bestPosts) 0 }}
-<div class="best-posts">
+<div>
   <h1>Best posts</h1>
   <ul class="posts">
     {{ range $bestPosts.GroupByDate "Jan, 2006" "desc" }}
