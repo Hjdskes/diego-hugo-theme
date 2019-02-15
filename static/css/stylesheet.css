@@ -25,9 +25,9 @@ h4,
 h5,
 h6 {
     color: #213038;
-    padding-top: 0.6em;
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
+    margin-bottom: 0.1em;
 }
 h1 {
     font-size: 2.4em;
@@ -218,13 +218,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 1.5em;
 }
 .banner nav {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
 }
 .banner h1 {
-    padding-top: 0;
     text-align: center;
 }
 .banner .logo {
@@ -250,9 +250,6 @@ button {
 .section-meta {
     font-size: 75%;
     color: #67767e;
-}
-.post-meta {
-    margin-top: -1.5em;
 }
 .section-meta {
     text-align: right;
