@@ -260,9 +260,6 @@ button {
     flex-shrink: 0;
     padding-bottom: 0;
 }
-.page-heading h1 {
-    margin-bottom: 0.1em;
-}
 .middot:before {
     font-size: 75%;
     margin: 0 .8em;
@@ -274,11 +271,6 @@ button {
     margin-top: 0;
     margin-bottom: 0;
     display: flex;
-}
-.title {
-    text-align: left;
-    font-weight: 700;
-    font-size: 2.7em;
 }
 .social-icons a {
     color: #67767e;
