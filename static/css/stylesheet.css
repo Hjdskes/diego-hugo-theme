@@ -202,7 +202,7 @@ button {
 .banner h1 {
     text-align: center;
 }
-.banner .logo {
+.banner img {
     max-width: 180px;
     padding-right: 1.5em;
 }
@@ -301,7 +301,7 @@ button {
     .banner {
         display: block;
     }
-    .banner .logo {
+    .banner img {
         padding-right: 0;
     }
     .banner nav {
