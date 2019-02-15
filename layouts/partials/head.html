@@ -22,11 +22,11 @@
   <meta name="twitter:image:alt" content="Logo"/>
 
   <title>
-    {{- $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" -}}
+    {{- $url := replace .Permalink (printf "%s" .Site.BaseURL) "" -}}
     {{- if eq $url "" -}}
       {{ .Site.Title }}
     {{- else -}}
-      {{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Site.Title }} - {{ .Title }} {{ end }}
+      {{ .Site.Title }} - {{ .Title }}
     {{- end -}}
   </title>
 
