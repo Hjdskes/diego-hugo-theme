@@ -251,23 +251,18 @@ button {
     margin-top: 1em;
     list-style: none;
 }
-.meta {
+.post-meta,
+.section-meta {
     font-size: 75%;
     color: #67767e;
-    display: flex;
-    padding-bottom: 1.4rem;
-    flex-wrap: wrap;
 }
-.posts {
-    list-style: none;
+.post-meta {
+    margin-top: -1.5em;
 }
-.post-item {
-    padding-left: 1em;
-}
-.post-item .meta {
-    flex-basis: 7em;
-    flex-shrink: 0;
-    padding-bottom: 0;
+.section-meta {
+    text-align: right;
+    margin-right: 1em;
+    min-width: 7em;
 }
 .list {
     display: inline;
