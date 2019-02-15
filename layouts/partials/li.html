@@ -1,7 +1,6 @@
 <li>
-  <article>
-    <time class="list-meta" datetime="{{ time .Date }}">{{ .Date.Format .Site.Params.dateform }}</time>
-    <header>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </header>
+  <time class="section-meta" datetime="{{ .Date.Format .Site.Params.dateform }}">
+    {{ .Date.Format .Site.Params.dateform }}
+  </time>
+  <a href="{{ .Permalink }}">{{ .Title }}</a>
 </li>
