@@ -1,11 +1,8 @@
-html {
-    font-family: 'Nunito', sans-serif;
-    color: #37474f;
-    margin: 1em;
-}
 body {
+    font-family: 'Nunito', sans-serif;
     font-size: 13pt;
-    margin: 1em auto;
+    color: #37474f;
+    margin: 2em auto;
     max-width: 23cm;
 }
 audio,
