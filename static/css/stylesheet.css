@@ -78,18 +78,9 @@ a:hover {
 a:focus {
     outline: thin dotted;
 }
-abbr[title] {
-    border-bottom: 1px dotted;
-}
 b,
 strong {
     font-weight: bold;
-}
-dfn {
-    font-style: italic;
-}
-mark {
-    background: #1f9c1f;
 }
 blockquote {
     font-style: italic;
@@ -111,19 +102,6 @@ q:after, blockquote:after {
 small {
     font-size: 80%;
 }
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-sup {
-    top: -0.5em;
-}
-sub {
-    bottom: -0.25em;
-}
 ul {
     padding-left: 0;
 }
@@ -138,9 +116,6 @@ svg {
     height: 1em;
     width: 1em;
     fill: none;
-}
-figure {
-    margin: 0;
 }
 table {
     border-collapse: collapse;
