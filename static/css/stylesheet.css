@@ -221,15 +221,19 @@ button {
 }
 
 .banner {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.logo {
+.banner nav {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+.banner h1 {
+    padding-top: 0;
+    text-align: center;
+}
+.banner .logo {
     max-width: 180px;
     padding-right: 1.5em;
 }
@@ -349,11 +353,11 @@ button {
     .banner {
         display: block;
     }
-    .logo {
+    .banner .logo {
         padding-right: 0;
     }
-    nav {
-        display: block;
+    .banner nav {
+        display: grid;
         margin-top: 1em;
     }
     #name {
