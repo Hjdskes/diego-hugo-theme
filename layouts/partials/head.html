@@ -46,8 +46,14 @@
     <div>
       <a id="name" href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
       <nav>
-        {{ range $.Site.Home.Sections }}
-          <a href="{{ .Section | urlize | absURL }}">{{ humanize .Section }}</a>
+        {{ range .Site.Sections }}
+          <a href="{{ .Section | urlize | absURL }}">
+            {{- with .Title -}}
+              {{ humanize . }}
+            {{- else -}}
+              {{ humanize .Section }}
+            {{- end -}}
+          </a>
         {{ end }}
         {{ range where (where .Site.RegularPages "Section" "") ".Title" "!=" "License" }}
           <a href="{{ .Permalink }}">{{ humanize .Title }}</a>
