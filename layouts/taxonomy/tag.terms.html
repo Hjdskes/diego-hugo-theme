@@ -1,13 +1,13 @@
 {{ partial "head.html" . }}
-<section>
-  <div>
-    <h1>{{ .Title }}</h1>
-    <ul class="posts">
-      {{ $data := .Data }}
-      {{ range $key, $value := .Data.Terms.Alphabetical }}
-        <li><a href="{{ $value.Name | urlize }}"> {{ $value.Name }} </a>{{ $value.Count }}</li>
-      {{ end }}
-    </ul>
-  </div>
-</section>
+<h1>{{ .Title }}</h1>
+<ul class="posts">
+  {{ range $key, $value := .Data.Terms.Alphabetical }}
+    <li>
+      <a href="{{ $value.Name | urlize }}">
+        {{ $value.Name }}
+      </a>
+      : {{ $value.Count }}
+    </li>
+  {{ end }}
+</ul>
 {{ partial "footer.html" . }}

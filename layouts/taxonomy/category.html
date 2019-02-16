@@ -1,12 +1,8 @@
 {{ partial "head.html" . }}
-<section>
-  <div>
-    <h1>Posts in the {{ .Title }} category</h1>
-    <ul class="posts">
-      {{ range .Data.Pages.ByPublishDate }}
-        {{ partial "li.html" . }}
-      {{ end }}
-    </ul>
-  </div>
-</section>
+<h1>Posts in the {{ .Title }} category</h1>
+<ul class="posts">
+  {{ range .Data.Pages.ByPublishDate }}
+    {{ partial "li.html" . }}
+  {{ end }}
+</ul>
 {{ partial "footer.html" . }}
