@@ -126,10 +126,7 @@ th {
     color: #263238;
 }
 nav {
-    margin-bottom: 1em;
-    text-align: center;
     display: inline-flex;
-    margin-top: 0;
     font-size: 1.2rem;
 }
 nav a:first-child {
@@ -153,8 +150,7 @@ footer a {
 footer nav {
     display: flex;
     justify-content: center;
-    height: 2em;
-    margin: 0;
+    margin-bottom: .8em;
 }
 kbd {
     display: inline-block;
@@ -180,6 +176,7 @@ kbd {
 }
 .banner h1 {
     text-align: center;
+    margin-top: .1em;
 }
 .banner img {
     max-width: 180px;
@@ -230,7 +227,6 @@ kbd {
 
 .info,
 .warning {
-  margin: 10px 0;
   padding: 1em;
   border: 1pt solid #93a1a1;
   box-shadow: 2pt 2pt 4pt #93a1a1;
