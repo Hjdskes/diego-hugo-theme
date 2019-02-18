@@ -1,8 +1,11 @@
 {{ partial "head.html" . }}
 <h1>Posts in the {{ .Title }} series</h1>
 <ul class="posts">
-  {{ range .Data.Pages.ByPublishDate }}
-    {{ partial "li.html" . }}
+  {{ range .Data.Pages.ByPublishDate.GroupByDate "Jan, 2006" "desc" }}
+    <li class="groupby">{{ .Key }}</li>
+    {{ range sort .Pages "Date" "desc" }}
+      {{ partial "li.html" . }}
+    {{ end }}
   {{ end }}
 </ul>
 {{ partial "footer.html" . }}

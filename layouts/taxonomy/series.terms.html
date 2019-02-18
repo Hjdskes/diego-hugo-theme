@@ -2,7 +2,9 @@
 <h1>{{ .Title }}</h1>
 <ul class="posts">
   {{ range .Data.Pages.ByPublishDate }}
-    {{ partial "li.html" . }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
   {{ end }}
 </ul>
 {{ partial "footer.html" . }}
