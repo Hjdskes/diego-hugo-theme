@@ -223,6 +223,7 @@ kbd {
 }
 #name {
     color: #213038;
+    outline: none;
 }
 
 .info,
