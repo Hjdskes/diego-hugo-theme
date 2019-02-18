@@ -186,12 +186,21 @@ kbd {
     display: inline-block;
     vertical-align: middle;
 }
-.posts {
+.posts,
+.projects,
+.contributions {
     list-style: none;
+    padding-left: .5em;
 }
-.posts li {
+.posts li,
+.projects li,
+.contributions li {
     display: flex;
     align-items: baseline;
+}
+.posts .section-meta {
+    text-align: right;
+    min-width: 7em;
 }
 .groupby {
     margin-top: 1em;
@@ -203,9 +212,7 @@ kbd {
     color: #67767e;
 }
 .section-meta {
-    text-align: right;
     margin-right: 1em;
-    min-width: 7em;
 }
 .list {
     display: inline;
