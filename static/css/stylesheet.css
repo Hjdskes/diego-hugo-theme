@@ -25,8 +25,7 @@ h4,
 h5,
 h6 {
     color: #213038;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    font-weight: normal;
     margin-bottom: 0.1em;
 }
 h1 {
@@ -174,8 +173,7 @@ iframe {
     padding-bottom: 1.5em;
 }
 .banner nav {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
+    font-weight: bold;
 }
 .banner h1 {
     text-align: center;
