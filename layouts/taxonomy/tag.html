@@ -1,5 +1,5 @@
 {{ partial "head.html" . }}
-<h1>Posts about {{ lower .Title }}</h1>
+<h1>Posts tagged with <q>{{ lower .Title }}</q></h1>
 <ul class="posts">
   {{ range .Data.Pages.ByPublishDate.GroupByDate "Jan, 2006" "desc" }}
     <li class="groupby">{{ .Key }}</li>
