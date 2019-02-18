@@ -1,11 +1,10 @@
 {{ partial "head.html" . }}
 <h1>{{ .Title }}</h1>
 <ul class="posts">
-  {{ range .Data.Pages.ByPublishDate.GroupByDate "Jan, 2006" "desc" }}
-    <li class="groupby">{{ .Key }}</li>
-    {{ range sort .Pages "Date" "desc" }}
-      {{ partial "li.html" . }}
-    {{ end }}
+  {{ range .Data.Pages.ByTitle }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
   {{ end }}
 </ul>
 {{ partial "footer.html" . }}
