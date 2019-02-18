@@ -260,19 +260,28 @@ kbd {
     width: 240px;
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 690px) {
+    body {
+        margin: 2em 1em;
+    }
     p {
         text-align: justify;
     }
     .banner {
         display: block;
+        padding-bottom: 0;
     }
     .banner img {
         padding-right: 0;
     }
     .banner nav {
-        display: grid;
+        display: block;
         margin-top: 1em;
+    }
+    .banner nav a {
+        display: block;
+        margin: 0;
+        text-align: center;
     }
     #name {
         display: none;
