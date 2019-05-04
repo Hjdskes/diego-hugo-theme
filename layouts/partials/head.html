@@ -31,8 +31,8 @@
   </title>
 
   <link rel="canonical" href="{{ .Permalink }}"/>
-  {{ if .RSSLink }}
-  <link rel="alternate" type="application/rss+xml" href="{{ .RSSLink }}" title="{{ .Site.Title }}"/>
+  {{ with .OutputFormats.Get "RSS" }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ .Name }}"/>
   {{ end }}
   <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico"/>
 
