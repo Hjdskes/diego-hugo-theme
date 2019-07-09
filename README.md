@@ -17,4 +17,4 @@ License
 
 Please see [LICENSE](https://github.com/Hjdskes/diego-hugo-theme/blob/master/LICENSE).
 
-**Copyright © 2018 - 2019** Jente Hidskes &lt;hjdskes@gmail.com&gt;
+**Copyright © 2018 - 2019** Jente Hidskes &lt;dev@hjdskes.nl&gt;
